@@ -66,7 +66,7 @@ func usage() {
 }
 
 func main() {
-	fmt.Printf(" -watchdir /directory/to/monitor\n")
+	fmt.Printf("Inside main")
 	flag.Parse()
 	if watchDir == "" {
 		usage()
