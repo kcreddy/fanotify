@@ -139,8 +139,10 @@ func fileDeleteSelf() (uint, uint64) {
 	log.Printf("unix.FAN_DELETE: %v | unix.FAN_DELETE_SELF: %v | unix.FAN_ONDIR: %v", unix.FAN_DELETE, unix.FAN_DELETE_SELF, unix.FAN_ONDIR)
 	log.Printf("unix.FAN_CLASS_NOTIF | unix.FD_CLOEXEC | unix.FAN_REPORT_FID : %v", unix.FAN_CLASS_NOTIF|unix.FD_CLOEXEC|unix.FAN_REPORT_FID)
 	log.Printf("unix.FAN_DELETE | unix.FAN_DELETE_SELF | unix.FAN_ONDIR : %v", unix.FAN_DELETE|unix.FAN_DELETE_SELF|unix.FAN_ONDIR)
-	flags := uint(unix.FAN_CLASS_NOTIF | unix.FD_CLOEXEC | unix.FAN_REPORT_FID)
-	mask := uint64(unix.FAN_DELETE | unix.FAN_DELETE_SELF | unix.FAN_ONDIR)
+	// flags := uint(unix.FAN_CLASS_NOTIF | unix.FD_CLOEXEC | unix.FAN_REPORT_FID)
+	flags := uint(unix.FAN_CLASS_NOTIF | unix.FD_CLOEXEC)
+	// mask := uint64(unix.FAN_DELETE | unix.FAN_DELETE_SELF | unix.FAN_ONDIR)
+	mask := uint64(unix.FAN_ONDIR)
 	return flags, mask
 }
 
